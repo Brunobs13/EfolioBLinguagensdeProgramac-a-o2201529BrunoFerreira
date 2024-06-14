@@ -1,0 +1,62 @@
+Read Me 
+Guia passo a passo de compilação 
+
+
+É essencial garantir que o caminho para as bibliotecas JPL e SWI-Prolog estejam corretamente configurados.
+
+Todos os ficheiros devem estar no mesmo diretório. 
+
+String consult = "consult('/Users/brunoferreira/Downloads/EfolioBLinguagens de programação/store.pl')";
+ O professor poderá alterar esta linha de código, para o diretório de store.pl do professor. 
+
+Devemos ter o jpl.jar e as bibliotecas nativas (.so, .dll, ou .dylib dependendo do seu sistema operacional) do SWI-Prolog.
+
+Compilar na linha de comandos:  
+Navegar até ao diretório onde o projeto se encontra, no meu caso: 
+cd /Users/brunoferreira/Downloads/projeto
+
+Compilar o código em java sabendo que assumindo que:  
+jpl.jar está localizado em /opt/homebrew/opt/swi-prolog/lib/swipl/lib/jpl.jar
+
+Com o seguinte comando: 
+
+javac -cp .:/opt/homebrew/opt/swi-prolog/lib/swipl/lib/jpl.jar Main.java Store.java Cliente.java Item.java Cart.java
+
+
+
+Executar o código: 
+
+java -Djava.library.path=/opt/homebrew/opt/swi-prolog/lib/swipl/lib -cp .:/opt/homebrew/opt/swi-prolog/lib/swipl/lib/jpl.jar:. Main
+
+O código para este projeto é definido por estes 6 ficheiros apenas:
+Main.java Store.java Cliente.java Item.java Cart.java e store.pl
+
+
+
+Exemplo: 
+
+Last login: Sat May 25 03:53:19 on ttys000
+(base) brunoferreira@Air-de-Bruno ~ % cd /Users/brunoferreira/Downloads/jpl-complied                                                                      
+
+(base) brunoferreira@Air-de-Bruno jpl-complied % javac -cp .:/opt/homebrew/opt/swi-prolog/lib/swipl/lib/jpl.jar Main.java Store.java Cliente.java Item.java Cart.java
+
+Note: Store.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+(base) brunoferreira@Air-de-Bruno jpl-complied % java -Djava.library.path=/opt/homebrew/opt/swi-prolog/lib/swipl/lib -cp .:/opt/homebrew/opt/swi-prolog/lib/swipl/lib/jpl.jar:. Main
+
+Arquivo Prolog carregado com sucesso.
+Selecione uma opção:
+1: Registrar uma nova venda
+2: Histórico de Vendas
+3: Gestão de Inventário
+4: Gestão de Custos e Descontos
+5: Gestão de Clientes
+0: Sair
+Selecione uma opção:
+
+
+
+
+
+ 
+
